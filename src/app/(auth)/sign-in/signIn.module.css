@@ -1,0 +1,44 @@
+.signInPageWrapper {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		padding: 0 40px;
+}
+.signInPageContainer{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+}
+.container {
+		width: 100%;
+		padding: 32px 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		align-items: center;
+}
+
+.header{
+		display: flex;
+		flex-direction: row;
+		gap: 12px;
+}
+
+.separator {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		color: var(--gray-600);
+}
+
+.separator::before,
+.separator::after {
+		content: "";
+		flex: 1;
+		border-bottom: 1px solid var(--gray-300);
+}
+
+.separator span {
+		padding: 0 12px;
+		background: white; /* или var(--background) */
+}
