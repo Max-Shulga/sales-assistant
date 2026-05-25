@@ -1,74 +1,90 @@
 # CRM Lab
 
-Pet project CRM built with Next.js, Supabase and n8n.
+CRM-система для управления пользователями с real-time уведомлениями и автоматизацией через n8n.
 
-## Overview
+## Стек
 
-CRM Lab is a simple customer management system demonstrating modern fullstack architecture with event-driven integrations.
+- **Next.js 16** (App Router) — фреймворк
+- **React 19** — UI
+- **Supabase** — база данных, аутентификация, SSR-сессии
+- **n8n** — автоматизация и Telegram-уведомления
+- **AG Grid** — таблица пользователей
+- **React Hook Form + Zod** — формы и валидация
+- **SCSS Modules** — стилизация
+- **Sonner** — toast-уведомления
+- **Husky + lint-staged** — pre-commit хуки
 
-The project focuses on combining server actions, real-time updates and external automation workflows.
+## Возможности
 
-## Features
+- 🔐 Аутентификация (логин / регистрация) через Supabase
+- 👥 Таблица пользователей с AG Grid (сортировка, фильтрация)
+- ✏️ Редактирование профиля пользователя
+- 🌙 Тёмная / светлая тема без мигания (anti-flash)
+- 🔔 Webhook-уведомления в Telegram через n8n
 
-- Authentication (Supabase Auth)
-- Users management (create/update)
-- Realtime users table (Supabase subscriptions)
-- Form handling with React Hook Form + Zod
-- Server Actions for mutations
-- Event-driven notifications via n8n:
-  - User login events
-  - User update events
-- Telegram bot integration
+## Быстрый старт
 
-## Demo
-
-Telegram bot: https://t.me/crm_lab_notifications_bot
-
-A test account is available upon request.
-
-## Tech Stack
-
-- **Frontend:** Next.js, TypeScript
-- **Forms & Validation:** React Hook Form, Zod
-- **Backend:** Next.js Server Actions
-- **Database & Auth:** Supabase
-- **Automation:** n8n
-- **Notifications:** Telegram Bot API
-
-## Architecture
-
-The project uses an event-driven approach for external integrations:
-
-- Server Actions handle mutations (login, update user)
-- Events are sent to n8n via webhook
-- n8n processes events and sends notifications to Telegram
-
-## Getting Started
-
-1. Clone the repository
-
-2. Install dependencies
+### 1. Установка зависимостей
 
 ```bash
 npm install
 ```
 
-3. Create .env.local file in the root and add:
+### 2. Переменные окружения
+
+Скопируй `.env.example` в `.env.local` и заполни значения:
 
 ```bash
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-N8N_WEBHOOK_URL=your_n8n_webhook_url
+cp .env.example .env.local
 ```
 
-4. Run the development server
+```env
+NEXT_PUBLIC_SUPABASE_URL=      # URL проекта в Supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY= # Anon key из Supabase
+N8N_WEBHOOK_URL=               # URL вебхука n8n
+```
+
+### 3. Запуск
 
 ```bash
 npm run dev
 ```
 
-5. Open in browser:
+Открой [http://localhost:3000](http://localhost:3000).
 
-```bash
-http://localhost:3000
+## Скрипты
+
+| Команда            | Описание                 |
+| ------------------ | ------------------------ |
+| `npm run dev`      | Запуск dev-сервера       |
+| `npm run build`    | Сборка для продакшена    |
+| `npm run start`    | Запуск продакшен-сервера |
+| `npm run lint`     | Проверка ESLint          |
+| `npm run lint:fix` | Автоисправление ESLint   |
+| `npm run format`   | Форматирование Prettier  |
+
+## Структура проекта
+
 ```
+src/
+├── app/
+│   ├── (private)/          # Защищённые маршруты (dashboard, users)
+│   ├── (public)/           # Публичные маршруты (login, register)
+│   └── layout.tsx          # Root layout
+├── components/ui/          # UI-компоненты (Button, Input, Badge, ...)
+├── contexts/               # React Context (ThemeContext)
+├── actions/                # Server Actions (auth, user)
+├── lib/
+│   ├── supabase/           # Клиент, сервер, middleware
+│   └── n8n/                # Отправка вебхуков
+├── schemas/                # Zod-схемы валидации
+└── styles/                 # Глобальные SCSS (темы, переменные, миксины)
+```
+
+## Архитектура уведомлений
+
+```
+Server Action → n8n Webhook → Telegram Bot
+```
+
+Server Actions выполняют мутации (логин, обновление пользователя), отправляют событие на вебхук n8n, n8n обрабатывает событие и шлёт уведомление в Telegram.
