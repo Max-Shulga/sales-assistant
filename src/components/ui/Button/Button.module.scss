@@ -1,0 +1,38 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.button {
+  @include transition;
+  @include flex(row, center, center);
+
+  min-height: 44px;
+  padding: 0 $space-md;
+  border: 1px solid transparent;
+  border-radius: $radius-md;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background: $color-primary;
+  color: $color-surface;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+}
+
+.secondary {
+  background: $color-surface;
+  color: $color-text;
+  border-color: $color-border;
+
+  &:hover {
+    background: $color-surface-muted;
+    border-color: $color-border-strong;
+  }
+}

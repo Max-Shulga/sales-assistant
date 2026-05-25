@@ -1,0 +1,30 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.input {
+  @include transition;
+
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-surface;
+  color: $color-text;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:focus {
+    border-color: $color-primary;
+  }
+}
+
+.error {
+  border-color: $color-error;
+
+  &:focus {
+    border-color: $color-error;
+  }
+}

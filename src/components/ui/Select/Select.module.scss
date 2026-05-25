@@ -1,0 +1,61 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.trigger {
+  @include transition;
+  @include flex(row, center, space-between);
+
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-surface;
+  color: $color-text;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $color-border-strong;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+.popup {
+  @include flex(column, stretch, flex-start);
+
+  min-width: var(--anchor-width);
+  padding: $space-xs;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  background: $color-surface;
+  box-shadow: $shadow-popup;
+}
+
+.item {
+  @include transition;
+  @include flex(row, center, flex-start);
+
+  gap: $space-sm;
+  min-height: 40px;
+  padding: 0 $space-sm;
+  border-radius: $radius-md;
+  color: $color-text;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-surface-muted;
+    color: $color-primary;
+  }
+}
+
+.indicator {
+  @include flex(row, center, center);
+
+  width: 16px;
+  height: 16px;
+  color: $color-primary;
+}

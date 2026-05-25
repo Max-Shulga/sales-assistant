@@ -1,0 +1,20 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.field {
+  @include flex(column, flex-start, flex-start);
+
+  gap: 6px;
+  width: 100%;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-text;
+}
+
+.error {
+  font-size: 12px;
+  color: $color-error;
+}

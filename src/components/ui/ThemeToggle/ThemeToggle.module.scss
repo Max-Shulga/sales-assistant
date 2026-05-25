@@ -1,0 +1,60 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+// Полная кнопка — в сайдбаре
+.toggle {
+  @include transition;
+  @include flex(row, center, flex-start);
+
+  gap: $space-sm;
+  width: 100%;
+  min-height: 46px;
+  padding: 0 $space-md;
+  border: 1px solid transparent;
+  border-radius: $radius-lg;
+  background: transparent;
+  color: $color-text-muted;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+
+  svg {
+    @include transition;
+
+    color: inherit;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: $color-surface-muted;
+    color: $color-text;
+    border-color: $color-border;
+  }
+}
+
+// Компактная — только иконка, для публичных страниц
+.toggleCompact {
+  @include transition;
+  @include flex(row, center, center);
+
+  width: 40px;
+  height: 40px;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  background: $color-surface;
+  color: $color-text-muted;
+  cursor: pointer;
+
+  svg {
+    @include transition;
+
+    color: inherit;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: $color-surface-muted;
+    color: $color-text;
+    border-color: $color-border-strong;
+  }
+}

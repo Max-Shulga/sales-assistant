@@ -1,0 +1,64 @@
+// === Colors (reference CSS custom properties — change with theme) ===
+
+// Brand
+$color-primary: var(--color-primary);
+$color-primary-dark: var(--color-primary-dark);
+$color-primary-subtle: var(--color-primary-subtle);
+
+// Text
+$color-text: var(--color-text);
+$color-text-muted: var(--color-text-muted);
+
+// Backgrounds
+$color-bg: var(--color-bg);
+$color-surface: var(--color-surface);
+$color-surface-muted: var(--color-surface-muted);
+
+// Borders
+$color-border: var(--color-border);
+$color-border-strong: var(--color-border-strong);
+
+// State
+$color-error: var(--color-error);
+
+// Status: Success
+$color-success: var(--color-success);
+$color-success-bg: var(--color-success-bg);
+$color-success-border: var(--color-success-border);
+
+// Status: Warning
+$color-warning: var(--color-warning);
+$color-warning-bg: var(--color-warning-bg);
+$color-warning-border: var(--color-warning-border);
+
+// Status: Danger
+$color-danger: var(--color-danger);
+$color-danger-bg: var(--color-danger-bg);
+$color-danger-border: var(--color-danger-border);
+
+// Status: Neutral
+$color-neutral: var(--color-neutral);
+$color-neutral-bg: var(--color-neutral-bg);
+$color-neutral-border: var(--color-neutral-border);
+
+// Gradients
+$gradient-sidebar: var(--gradient-sidebar);
+
+// Shadows
+$shadow-soft: var(--shadow-soft);
+$shadow-popup: var(--shadow-popup);
+
+// === Fixed values (theme-independent) ===
+
+// Border Radius
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 14px;
+$radius-xl: 18px;
+
+// Spacing
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;

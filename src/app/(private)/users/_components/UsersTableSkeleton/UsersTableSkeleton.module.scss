@@ -1,0 +1,65 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.section {
+  @include flex(column, stretch, flex-start);
+
+  gap: $space-lg;
+  height: 100%;
+  min-height: 0;
+}
+
+.header {
+  @include flex(row, center, space-between);
+}
+
+.title {
+  width: 140px;
+  height: 32px;
+}
+
+.subtitle {
+  width: 120px;
+  height: 16px;
+  margin-top: $space-xs;
+}
+
+.table {
+  @include flex(column, stretch, flex-start);
+
+  gap: $space-sm;
+  flex: 1;
+  min-height: 0;
+  padding: $space-md;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  background: $color-surface;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1fr 0.9fr 0.9fr 1fr;
+  gap: $space-md;
+}
+
+.headerCell {
+  width: 100%;
+  height: 18px;
+}
+
+.tableBody {
+  @include flex(column, stretch, flex-start);
+
+  gap: $space-sm;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 1fr 0.9fr 0.9fr 1fr;
+  gap: $space-md;
+}
+
+.cell {
+  width: 100%;
+  height: 36px;
+}

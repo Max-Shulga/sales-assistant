@@ -1,0 +1,13 @@
+.panel {
+  width: 100%;
+  height: 100%;
+  background-image: url('/auth-illustration-light.svg');
+  background-size: cover;
+  background-position: center;
+
+  // Switches instantly because [data-theme] is set by the inline script
+  // before React hydrates — no JS state needed, zero flash.
+  :global([data-theme='dark']) & {
+    background-image: url('/auth-illustration-dark.svg');
+  }
+}

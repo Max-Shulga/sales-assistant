@@ -1,0 +1,41 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.badge {
+  @include flex(row, center, center);
+
+  display: inline-flex;
+  width: fit-content;
+  min-height: 24px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.success {
+  background: $color-success-bg;
+  color: $color-success;
+  border-color: $color-success-border;
+}
+
+.neutral {
+  background: $color-neutral-bg;
+  color: $color-neutral;
+  border-color: $color-neutral-border;
+}
+
+.warning {
+  background: $color-warning-bg;
+  color: $color-warning;
+  border-color: $color-warning-border;
+}
+
+.danger {
+  background: $color-danger-bg;
+  color: $color-danger;
+  border-color: $color-danger-border;
+}

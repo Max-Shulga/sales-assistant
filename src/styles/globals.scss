@@ -1,0 +1,16 @@
+@use './themes';
+@use './variables' as *;
+@use './mixins' as *;
+@use './reset';
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: $color-bg;
+  color: $color-text;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}

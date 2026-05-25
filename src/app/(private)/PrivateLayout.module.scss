@@ -1,0 +1,56 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.layout {
+  @include flex(row, stretch, flex-start);
+
+  min-height: 100vh;
+  background: $color-bg;
+}
+
+.sidebar {
+  @include flex(column, stretch, flex-start);
+
+  width: 280px;
+  min-height: 100vh;
+  padding: $space-lg;
+  border-right: 1px solid $color-border;
+  background: $gradient-sidebar;
+  box-shadow: $shadow-soft;
+}
+
+.topSection {
+  @include flex(column, flex-start, flex-start);
+
+  gap: $space-lg;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-text;
+}
+
+.navigationSection {
+  flex: 1;
+  min-height: 0;
+  margin-top: $space-lg;
+  overflow-y: auto;
+}
+
+.bottomSection {
+  @include flex(column, stretch, flex-start);
+
+  gap: $space-xs;
+  margin-top: $space-lg;
+  padding-top: $space-md;
+  border-top: 1px solid $color-border;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  padding: $space-xl;
+}

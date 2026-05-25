@@ -1,0 +1,43 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.nav {
+  @include flex(column, stretch, flex-start);
+
+  gap: $space-xs;
+  width: 100%;
+}
+
+.link {
+  @include transition;
+  @include flex(row, center, flex-start);
+
+  gap: $space-sm;
+  width: 100%;
+  min-height: 46px;
+  padding: 0 $space-md;
+  border: 1px solid transparent;
+  border-radius: $radius-lg;
+  color: $color-text-muted;
+  text-decoration: none;
+
+  svg {
+    @include transition;
+
+    color: inherit;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: $color-surface-muted;
+    color: $color-text;
+    border-color: $color-border;
+  }
+}
+
+.active {
+  background: $color-primary-subtle;
+  color: $color-primary-dark;
+  border-color: transparent;
+  font-weight: 600;
+}

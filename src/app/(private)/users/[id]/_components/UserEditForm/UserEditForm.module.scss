@@ -1,0 +1,35 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.form {
+  @include flex(column, stretch, flex-start);
+
+  gap: $space-lg;
+  padding: $space-lg;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  background: $color-surface;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-md;
+}
+
+.actions {
+  @include flex(row, center, flex-end);
+
+  gap: $space-sm;
+}
+
+.error {
+  font-size: 14px;
+  color: $color-error;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
