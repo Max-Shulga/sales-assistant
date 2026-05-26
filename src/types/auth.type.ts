@@ -2,8 +2,6 @@ import type { signInSchema, signUpSchema } from '@/schemas/auth.schema';
 
 import type { TFieldErrorsFrom, TZodInfer } from './utility.type';
 
-// --- Sign In ---
-
 type TSignInData = TZodInfer<typeof signInSchema>;
 
 type TSignInFormValues = TZodInfer<typeof signInSchema>;
@@ -12,8 +10,6 @@ type TActionState = {
   errors?: TFieldErrorsFrom<TSignInData>;
   error?: string;
 };
-
-// --- Sign Up ---
 
 type TSignUpData = TZodInfer<typeof signUpSchema>;
 

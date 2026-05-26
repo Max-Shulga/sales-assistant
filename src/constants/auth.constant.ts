@@ -20,8 +20,6 @@ const SIGN_IN_INITIAL_STATE: TActionState = {
   error: undefined,
 };
 
-// ---------------------------------------------------------------------------
-
 const SIGN_UP_FORM_FIELDS = {
   EMAIL: 'email',
   PASSWORD: 'password',
@@ -47,9 +45,6 @@ const SIGN_UP_INITIAL_STATE: TRegisterActionState = {
   message: undefined,
 };
 
-// ---------------------------------------------------------------------------
-
-/** @deprecated Use SIGN_IN_INITIAL_STATE or SIGN_UP_INITIAL_STATE */
 const INITIAL_STATE: TActionState = {
   errors: {},
   error: undefined,

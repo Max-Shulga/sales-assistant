@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     'CRM system built with Next.js, Supabase and n8n featuring real-time updates and Telegram notifications.',
 };
 
-// Инлайн-скрипт применяет тему ДО гидрации React — предотвращает мигание
 const themeScript = `(function(){try{var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}})()`;
 
 export default function RootLayout({
@@ -32,10 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn(geistSans.variable, geistMono.variable)} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      <head suppressHydrationWarning>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} suppressHydrationWarning />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <ThemeProvider>
           {children}
           <Toaster richColors position="top-right" />

@@ -11,9 +11,18 @@ type TThemeToggleProps = {
 };
 
 const ThemeToggle = ({ compact = false }: TThemeToggleProps) => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, mounted } = useTheme();
 
   const isDark = theme === 'dark';
+
+  if (!mounted) {
+    return (
+      <button className={compact ? styles.toggleCompact : styles.toggle} aria-label="Toggle theme" disabled>
+        <Moon size={18} />
+        {!compact && <span>Dark mode</span>}
+      </button>
+    );
+  }
 
   return (
     <button
