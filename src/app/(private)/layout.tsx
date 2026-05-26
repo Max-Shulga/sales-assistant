@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { AppLogo } from '@/components/ui/AppLogo/AppLogo';
 import { ThemeToggle } from '@/components/ui/ThemeToggle/ThemeToggle';
 import { createSupabaseServerClient } from '@/lib/supabase/server';
 
@@ -29,7 +30,7 @@ const PrivateLayout = async ({ children }: TPrivateLayoutProps) => {
     <div className={styles.layout}>
       <aside className={styles.sidebar}>
         <div className={styles.topSection}>
-          <div className={styles.logo}>CRM Lab</div>
+          <AppLogo />
         </div>
 
         <div className={styles.navigationSection}>
