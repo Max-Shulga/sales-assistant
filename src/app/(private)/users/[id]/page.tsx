@@ -24,10 +24,7 @@ const UserPage = async ({ params }: TUserPageProps) => {
     notFound();
   }
 
-  const breadcrumbItems = [
-    { label: 'Users', href: ROUTES.USERS },
-    { label: `${user.first_name} ${user.last_name}` },
-  ] as const;
+  const breadcrumbItems = [{ label: 'Users', href: ROUTES.USERS }, { label: `${user.full_name}` }] as const;
 
   return (
     <section className={styles.page}>
