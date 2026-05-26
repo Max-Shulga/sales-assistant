@@ -17,8 +17,7 @@ type TUseUserEditFormParams = {
 
 const getDefaultValues = (user: TUser): TUpdateUserFormValues => ({
   id: user.id,
-  first_name: user.first_name,
-  last_name: user.last_name,
+  full_name: user.full_name,
   email: user.email,
   phone: user.phone ?? '',
   role: user.role,
@@ -78,8 +77,7 @@ const useUserEditForm = ({ user }: TUseUserEditFormParams) => {
     const formData = new FormData();
 
     formData.append(USER_FORM_FIELDS.ID, values.id);
-    formData.append(USER_FORM_FIELDS.FIRST_NAME, values.first_name);
-    formData.append(USER_FORM_FIELDS.LAST_NAME, values.last_name);
+    formData.append(USER_FORM_FIELDS.FULL_NAME, values.full_name);
     formData.append(USER_FORM_FIELDS.EMAIL, values.email);
     formData.append(USER_FORM_FIELDS.PHONE, values.phone ?? '');
     formData.append(USER_FORM_FIELDS.ROLE, values.role);

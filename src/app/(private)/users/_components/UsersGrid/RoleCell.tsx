@@ -7,7 +7,6 @@ type TRoleCellProps = {
 
 const ROLE_VARIANTS = {
   [USER_ROLES.ADMIN]: 'danger',
-  [USER_ROLES.MANAGER]: 'warning',
   [USER_ROLES.USER]: 'neutral',
 } as const;
 

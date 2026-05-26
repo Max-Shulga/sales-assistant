@@ -1,5 +1,11 @@
 'use client';
 
+import { UserPlus } from 'lucide-react';
+import { useState } from 'react';
+
+import { Button } from '@/components/ui/Button/Button';
+
+import { CreateUserModal } from '../CreateUserModal/CreateUserModal';
 import { UsersGrid } from '../UsersGrid/UsersGrid';
 import { UsersTableSkeleton } from '../UsersTableSkeleton/UsersTableSkeleton';
 
@@ -8,6 +14,7 @@ import styles from './UsersTableContainer.module.scss';
 
 const UsersTableContainer = () => {
   const { users, isLoading, usersCount } = useUsersTable();
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
   if (isLoading) {
     return <UsersTableSkeleton />;
@@ -22,11 +29,18 @@ const UsersTableContainer = () => {
             Total users: <span>{usersCount}</span>
           </p>
         </div>
+
+        <Button onClick={() => setIsCreateModalOpen(true)}>
+          <UserPlus size={16} />
+          Add User
+        </Button>
       </div>
 
       <div className={styles.tableSection}>
         <UsersGrid users={users} />
       </div>
+
+      <CreateUserModal isOpen={isCreateModalOpen} onClose={() => setIsCreateModalOpen(false)} />
     </section>
   );
 };

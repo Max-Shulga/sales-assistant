@@ -1,0 +1,54 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 101;
+  width: calc(100% - #{$space-lg * 2});
+  max-width: 560px;
+  padding: $space-lg;
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-popup;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  @include flex(row, center, space-between);
+
+  margin-bottom: $space-lg;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: $color-text;
+}
+
+.close {
+  @include flex(row, center, center);
+  @include transition;
+
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: $radius-md;
+  background: none;
+  color: $color-text-muted;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-surface-muted;
+    color: $color-text;
+  }
+}
