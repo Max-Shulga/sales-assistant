@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'CRM Lab',
+  title: 'Sales Assistant',
   description:
     'CRM system built with Next.js, Supabase and n8n featuring real-time updates and Telegram notifications.',
 };
