@@ -3,9 +3,6 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 import { supabaseUrl, supabaseKey } from '@/config/env';
 
-// IMPORTANT: getUser() must be called INSIDE this function so that
-// if Supabase refreshes the token (setAll), the updated `response`
-// with new cookies is the one that gets returned.
 const updateSession = async (request: NextRequest) => {
   let response = NextResponse.next({
     request: {

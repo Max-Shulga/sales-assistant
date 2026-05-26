@@ -81,7 +81,6 @@ const signUp = async (_state: TRegisterActionState, formData: FormData): Promise
     };
   }
 
-  // Email confirmation required — session is null until user confirms
   if (data.user && !data.session) {
     return {
       errors: {},

@@ -13,7 +13,6 @@ type TPublicLayoutProps = {
 const PublicLayout = ({ children }: TPublicLayoutProps) => {
   return (
     <div className={styles.root}>
-      {/* ── Left: form panel ──────────────────────────────────── */}
       <div className={styles.formPanel}>
         <div className={styles.formPanelHeader}>
           <AppLogo />
@@ -23,7 +22,6 @@ const PublicLayout = ({ children }: TPublicLayoutProps) => {
         <div className={styles.formContent}>{children}</div>
       </div>
 
-      {/* ── Right: illustration ───────────────────────────────── */}
       <div className={styles.illustrationPanel}>
         <AuthIllustration />
       </div>
