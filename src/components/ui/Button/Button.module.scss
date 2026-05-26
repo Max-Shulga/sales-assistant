@@ -5,6 +5,7 @@
   @include transition;
   @include flex(row, center, center);
 
+  gap: $space-xs;
   min-height: 44px;
   padding: 0 $space-md;
   border: 1px solid transparent;

@@ -8,12 +8,11 @@ type TStatusCellProps = {
 const STATUS_VARIANTS = {
   [USER_STATUSES.ACTIVE]: 'success',
   [USER_STATUSES.INACTIVE]: 'neutral',
-  [USER_STATUSES.PENDING]: 'warning',
 } as const;
 
 const StatusCell = ({ value }: TStatusCellProps) => {
   const normalizedValue = value?.toLowerCase() ?? '';
-  const variant = STATUS_VARIANTS[normalizedValue as keyof typeof STATUS_VARIANTS] ?? 'warning';
+  const variant = STATUS_VARIANTS[normalizedValue as keyof typeof STATUS_VARIANTS] ?? 'neutral';
 
   return <Badge variant={variant}>{value ?? '-'}</Badge>;
 };

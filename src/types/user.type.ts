@@ -1,5 +1,5 @@
 import type { USER_ROLES, USER_STATUSES } from '@/constants/user.constant';
-import type { updateUserSchema } from '@/schemas/user.schema';
+import type { createUserSchema, updateUserSchema } from '@/schemas/user.schema';
 
 import type { TNullable, TValueOf, TZodInfer } from './utility.type';
 
@@ -14,8 +14,6 @@ type TSidebarUser = {
 
 type TUser = TSidebarUser & {
   full_name: string;
-  first_name: string;
-  last_name: string;
   phone: TNullable<string>;
   role: TUserRole;
   status: TUserStatus;
@@ -25,9 +23,7 @@ type TUser = TSidebarUser & {
 
 type TUpdateUserFormValues = TZodInfer<typeof updateUserSchema>;
 
-type TUserFormErrors = Partial<
-  Record<'first_name' | 'last_name' | 'email' | 'phone' | 'role' | 'status' | 'id', string[]>
->;
+type TUserFormErrors = Partial<Record<'full_name' | 'email' | 'phone' | 'role' | 'status' | 'id', string[]>>;
 
 type TUpdateUserState = {
   errors?: TUserFormErrors;
@@ -35,4 +31,25 @@ type TUpdateUserState = {
   success?: boolean;
 };
 
-export type { TUserRole, TUserStatus, TSidebarUser, TUser, TUpdateUserFormValues, TUserFormErrors, TUpdateUserState };
+type TCreateUserFormValues = TZodInfer<typeof createUserSchema>;
+
+type TCreateUserFormErrors = Partial<Record<'full_name' | 'email' | 'phone' | 'role' | 'status', string[]>>;
+
+type TCreateUserState = {
+  errors?: TCreateUserFormErrors;
+  error?: string;
+  success?: boolean;
+};
+
+export type {
+  TUserRole,
+  TUserStatus,
+  TSidebarUser,
+  TUser,
+  TUpdateUserFormValues,
+  TUserFormErrors,
+  TUpdateUserState,
+  TCreateUserFormValues,
+  TCreateUserFormErrors,
+  TCreateUserState,
+};

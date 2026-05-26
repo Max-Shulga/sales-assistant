@@ -1,0 +1,30 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.form {
+  @include flex(column, stretch, flex-start);
+
+  gap: $space-lg;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-md;
+}
+
+.required {
+  color: $color-error;
+}
+
+.actions {
+  @include flex(row, center, flex-end);
+
+  gap: $space-sm;
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

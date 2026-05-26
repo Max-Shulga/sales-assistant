@@ -47,7 +47,7 @@ const Select = ({
       </BaseSelect.Trigger>
 
       <BaseSelect.Portal>
-        <BaseSelect.Positioner sideOffset={8}>
+        <BaseSelect.Positioner sideOffset={8} className={styles.positioner}>
           <BaseSelect.Popup className={styles.popup}>
             {options.map((option) => (
               <BaseSelect.Item key={option.value} className={styles.item} value={option.value}>

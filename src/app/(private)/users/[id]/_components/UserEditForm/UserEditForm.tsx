@@ -31,27 +31,15 @@ const UserEditForm = ({ user }: TUserEditFormProps) => {
 
       <div className={styles.grid}>
         <FormField.Root>
-          <FormField.Label htmlFor={USER_FORM_FIELDS.FIRST_NAME}>First Name</FormField.Label>
+          <FormField.Label htmlFor={USER_FORM_FIELDS.FULL_NAME}>Full Name</FormField.Label>
 
           <Input
-            id={USER_FORM_FIELDS.FIRST_NAME}
-            hasError={Boolean(errors.first_name?.message)}
-            {...register(USER_FORM_FIELDS.FIRST_NAME)}
+            id={USER_FORM_FIELDS.FULL_NAME}
+            hasError={Boolean(errors.full_name?.message)}
+            {...register(USER_FORM_FIELDS.FULL_NAME)}
           />
 
-          <FormField.Error>{errors.first_name?.message}</FormField.Error>
-        </FormField.Root>
-
-        <FormField.Root>
-          <FormField.Label htmlFor={USER_FORM_FIELDS.LAST_NAME}>Last Name</FormField.Label>
-
-          <Input
-            id={USER_FORM_FIELDS.LAST_NAME}
-            hasError={Boolean(errors.last_name?.message)}
-            {...register(USER_FORM_FIELDS.LAST_NAME)}
-          />
-
-          <FormField.Error>{errors.last_name?.message}</FormField.Error>
+          <FormField.Error>{errors.full_name?.message}</FormField.Error>
         </FormField.Root>
 
         <FormField.Root>
